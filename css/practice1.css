@@ -1,0 +1,209 @@
+:root {
+  --text-color: white;
+  --background-color: darkslateblue;
+  --accent-color: #a4baff;
+}
+body {
+  background-color: darkgrey;
+  margin: 0;
+  padding: 0;
+}
+nav {
+  background-color: var(--background-color);
+  height: auto;
+  font-family: "Press Start 2P", cursive;
+}
+nav.navBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em 0.8em;
+}
+.left {
+  flex: 0 0 auto;
+}
+.middle {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+}
+.middle li {
+  font-size: 1rem;
+  padding: 0.5em 2em;
+}
+.middle li:hover {
+  flex: 1 1 auto;
+  background-color: var(--accent-color);
+  border-radius: 0.5rem;
+}
+.right {
+  flex: 0 0 auto;
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+}
+.right li {
+  padding: 0.5em 0;
+  padding-right: 0.8em;
+}
+.barsBtn {
+  position: absolute;
+  right: 32px;
+  font-size: 48px;
+  display: none;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+#logImg {
+  vertical-align: middle;
+  width: 4rem;
+  height: 4rem;
+  padding-bottom: 0.8rem;
+}
+#logName {
+  font-weight: bolder;
+  font-size: 1.5rem;
+}
+.sns {
+  width: 3rem;
+  float: right;
+}
+/*  */
+main.mainBox {
+  font-family: "Nanum Pen Script", cursive;
+  background-color: lavenderblush;
+  padding: 2em;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.component {
+  background-color: white;
+  border: 1px solid wheat;
+  margin: 1em;
+  height: auto;
+}
+.component:nth-child(1) {
+  flex-basis: 45%;
+}
+.component:nth-child(2) {
+  flex-basis: 45%;
+}
+.component:nth-child(3) {
+  flex-basis: 89.5vw;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+.title {
+  background-color: burlywood;
+  font-weight: bolder;
+  font-size: 2rem;
+  padding: 0.5em 0.5rem;
+}
+.contents {
+  background-color: white;
+  font-size: 1.25rem;
+  padding: 0.5em 0.5rem;
+  margin: 0;
+}
+.gallery {
+  padding: 0;
+  margin: 0;
+  z-index: 0;
+}
+.galleryImg {
+  height: 20rem;
+  width: 20rem;
+}
+.image-selected {
+  opacity: 0.5;
+}
+.image-magnified {
+  transform: scale(1.05);
+  transition: 0.5s;
+}
+.btn {
+  align-self: flex-start;
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+#selectBtn {
+  font-family: "Nanum Pen Script", cursive;
+  font-weight: bolder;
+  font-size: 2rem;
+  margin-right: -0.2rem;
+  border: 0.1rem solid white;
+  color: white;
+  border-top-left-radius: 0.3rem;
+  border-bottom-left-radius: 0.3rem;
+  background-color: #deb887;
+  width: 12rem;
+}
+#slideBtn {
+  font-family: "Nanum Pen Script", cursive;
+  font-weight: bolder;
+  font-size: 2rem;
+  margin-left: -0.2rem;
+  border: 0.1rem solid white;
+  color: white;
+  border-radius: 0.1rem;
+  border-top-right-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+  background-color: #deb887;
+  width: 10rem;
+}
+#selectBtn:hover,
+#slideBtn:hover {
+  background-color: #deb887;
+  color: white;
+}
+
+@media all and (max-width: 48rem) {
+  main.mainBox {
+    flex-direction: column;
+  }
+  nav.navBox {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .middle {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    display: none;
+  }
+  .middle li {
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+  }
+  .right {
+    justify-content: center;
+    width: 100%;
+    display: none;
+  }
+  .barsBtn {
+    display: block;
+  }
+  .middle.active,
+  .right.active {
+    display: flex;
+  }
+  .gallery {
+    width: 90%;
+    height: auto;
+  }
+  .galleryImg {
+    height: auto;
+    width: 90%;
+  }
+}
